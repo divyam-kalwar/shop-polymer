@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View your SHOP cart.">
+  <meta name="theme-color" content="#ffffff">
+  <title>Your cart - SHOP</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/shop-icon-32.png">
+  <link rel="stylesheet" href="./css/mens_outerwear.css">
+  <link rel="stylesheet" href="./css/cart.css">
+</head>
+<body>
+  <header class="site-header">
+    <input class="menu-toggle" type="checkbox" id="menu-toggle" aria-label="Toggle navigation">
+    <div class="toolbar">
+      <label class="menu-button" for="menu-toggle" aria-label="Open navigation">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      </label>
+      <a class="logo" href="index.html" aria-label="SHOP home">SHOP</a>
+      <a class="cart-link" href="cart.html" aria-label="Shopping cart" aria-current="page">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM1 2v2h2l3.6 7.59-1.35 2.45A2 2 0 0 0 7 17h12v-2H7.42a.25.25 0 0 1-.25-.25l.03-.12.9-1.63h7.45a2 2 0 0 0 1.75-1.03l3.58-6.49A1 1 0 0 0 20 4H5.21l-.94-2H1Z"/></svg>
+      </a>
+    </div>
+    <nav class="category-nav" aria-label="Shop categories">
+      <a href="mens_outerwear.html">Men's Outerwear</a>
+      <a href="ladies_outerwear.html">Ladies Outerwear</a>
+      <a href="mens_tshirts.html">Men's T-Shirts</a>
+      <a href="ladies_tshirts.html">Ladies T-Shirts</a>
+    </nav>
+    <nav class="mobile-nav" aria-label="Mobile shop categories">
+      <a href="mens_outerwear.html">Men's Outerwear</a>
+      <a href="ladies_outerwear.html">Ladies Outerwear</a>
+      <a href="mens_tshirts.html">Men's T-Shirts</a>
+      <a href="ladies_tshirts.html">Ladies T-Shirts</a>
+    </nav>
+    <label class="drawer-backdrop" for="menu-toggle" aria-label="Close navigation"></label>
+  </header>
+
+  <main>
+    <p class="cart-empty" role="status" aria-label="Your cart is empty.">
+      <span>Your</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM1 2v2h2l3.6 7.59-1.35 2.45A2 2 0 0 0 7 17h12v-2H7.42a.25.25 0 0 1-.25-.25l.03-.12.9-1.63h7.45a2 2 0 0 0 1.75-1.03l3.58-6.49A1 1 0 0 0 20 4H5.21l-.94-2H1Z"/></svg>
+      <span>is empty.</span>
+    </p>
+  </main>
+
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+
+    document.querySelectorAll(".mobile-nav a").forEach((link) => {
+      link.addEventListener("click", () => {
+        menuToggle.checked = false;
+      });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") menuToggle.checked = false;
+    });
+  </script>
+</body>
+</html>

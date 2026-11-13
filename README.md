@@ -20,9 +20,14 @@ The project is intentionally dependency-free and can be opened directly in a bro
 shop-polymer/
 ├── index.html                # Store home page
 ├── mens_outerwear.html       # Product listing page for men's outerwear
+├── ladies_outerwear.html     # Product listing page for ladies' outerwear
+├── mens_tshirts.html         # Product listing page for men's T-shirts
+├── ladies_tshirts.html       # Product listing page for ladies' T-shirts
+├── cart.html                 # Empty cart page
 ├── css/
 │   ├── style.css            # Styles for the home page
-│   └── mens_outerwear.css   # Styles for the product listing page
+│   ├── mens_outerwear.css   # Shared product listing and navigation styles
+│   └── cart.css             # Empty cart styles
 ├── js/
 │   └── script.js            # Placeholder JavaScript file (currently empty)
 ├── images/                  # Storefront and category product images
@@ -33,7 +38,7 @@ shop-polymer/
 
 ## Current implementation status
 
-This repository is in an early storefront prototype stage. The home page and one catalog page are implemented, while the broader e-commerce flow (cart, checkout, product detail pages, and dynamic data) is not yet built out.
+This repository is in an early storefront prototype stage. The home page, four static category listings, and an empty-cart screen are implemented. The cart does not yet store selected products, and checkout, product detail pages, and dynamic catalog data are not built out.
 
 ## Features
 

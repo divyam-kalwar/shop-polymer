@@ -14,6 +14,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 76px;
+  scrollbar-gutter: stable;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -74,7 +75,6 @@ input {
 }
 
 .site-header:has(.menu-toggle:checked) {
-  transform: translateY(0);
   background: transparent;
   box-shadow: none;
 }
@@ -157,10 +157,11 @@ input {
   position: fixed;
   z-index: 12;
   top: 0;
-  bottom: 0;
   left: 0;
   display: block;
   width: min(256px, 80vw);
+  height: 100vh;
+  height: 100dvh;
   padding: 8px 0;
   overflow-y: auto;
   background: #fff;
@@ -185,8 +186,10 @@ input {
 .drawer-backdrop {
   position: fixed;
   z-index: 9;
-  inset: 0;
+  inset: 0 0 auto;
   display: block;
+  height: 100vh;
+  height: 100dvh;
   background: rgba(0, 0, 0, 0.5);
   opacity: 0;
   pointer-events: none;
@@ -202,19 +205,6 @@ input {
 .site-header:has(.menu-toggle:checked) .drawer-backdrop {
   opacity: 1;
   pointer-events: auto;
-}
-
-/* Shift page when drawer opens */
-
-.site-header:has(.menu-toggle:checked) .toolbar,
-body:has(.menu-toggle:checked) .shop-home,
-body:has(.menu-toggle:checked) .site-footer {
-  transform: translateX(min(256px, 80vw));
-}
-
-.shop-home,
-.site-footer {
-  transition: transform 220ms ease;
 }
 
 body:has(.menu-toggle:checked) {
