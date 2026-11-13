@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop ladies outerwear.">
+  <meta name="theme-color" content="#ffffff">
+  <title>Ladies Outerwear - SHOP</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/shop-icon-32.png">
+  <link rel="stylesheet" href="./css/mens_outerwear.css">
+</head>
+<body class="listing-page">
+  <header class="site-header">
+    <input class="menu-toggle" type="checkbox" id="menu-toggle" aria-label="Toggle navigation">
+    <div class="toolbar">
+      <label class="menu-button" for="menu-toggle" aria-label="Open navigation">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      </label>
+      <a class="logo" href="index.html" aria-label="SHOP home">SHOP</a>
+      <a class="cart-link" href="cart.html" aria-label="Shopping cart">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM1 2v2h2l3.6 7.59-1.35 2.45A2 2 0 0 0 7 17h12v-2H7.42a.25.25 0 0 1-.25-.25l.03-.12.9-1.63h7.45a2 2 0 0 0 1.75-1.03l3.58-6.49A1 1 0 0 0 20 4H5.21l-.94-2H1Z"/></svg>
+      </a>
+    </div>
+    <nav class="category-nav" aria-label="Shop categories">
+      <a href="mens_outerwear.html">Men's Outerwear</a>
+      <a class="active" href="ladies_outerwear.html">Ladies Outerwear</a>
+      <a href="mens_tshirts.html">Men's T-Shirts</a>
+      <a href="ladies_tshirts.html">Ladies T-Shirts</a>
+    </nav>
+    <nav class="mobile-nav" aria-label="Mobile shop categories">
+      <a href="mens_outerwear.html">Men's Outerwear</a>
+      <a class="active" href="ladies_outerwear.html">Ladies Outerwear</a>
+      <a href="mens_tshirts.html">Men's T-Shirts</a>
+      <a href="ladies_tshirts.html">Ladies T-Shirts</a>
+    </nav>
+    <label class="drawer-backdrop" for="menu-toggle" aria-label="Close navigation"></label>
+  </header>
+
+  <main class="product-listing">
+    <img class="listing-hero" src="images/ladies_outerwear.jpg" alt="Ladies Outerwear collection">
+    <header class="listing-heading">
+      <h1>Ladies Outerwear</h1>
+      <span>(6 items)</span>
+    </header>
+    <ul class="product-grid">
+      <li class="product-card">
+        <a href="#" aria-label="Ladies Modern Stretch Full Zip">
+          <div class="product-image">
+            <img src="data/images/10-23069A.jpg" alt="Ladies Modern Stretch Full Zip" loading="lazy">
+          </div>
+          <div class="product-title">Ladies Modern Stretch Full Zip</div>
+          <div class="product-price">$41.60</div>
+        </a>
+      </li>
+      <li class="product-card">
+        <a href="#" aria-label="Ladies Colorblock Wind Jacket">
+          <div class="product-image">
+            <img src="data/images/10-23073A.jpg" alt="Ladies Colorblock Wind Jacket" loading="lazy">
+          </div>
+          <div class="product-title">Ladies Colorblock Wind Jacket</div>
+          <div class="product-price">$45.90</div>
+        </a>
+      </li>
+      <li class="product-card">
+        <a href="#" aria-label="Ladies Voyage Fleece Jacket">
+          <div class="product-image">
+            <img src="data/images/10-23169A.jpg" alt="Ladies Voyage Fleece Jacket" loading="lazy">
+          </div>
+          <div class="product-title">Ladies Voyage Fleece Jacket</div>
+          <div class="product-price">$48.00</div>
+        </a>
+      </li>
+      <li class="product-card">
+        <a href="#" aria-label="Ladies Pullover L/S Hood">
+          <div class="product-image">
+            <img src="data/images/10-23171A.jpg" alt="Ladies Pullover L/S Hood" loading="lazy">
+          </div>
+          <div class="product-title">Ladies Pullover L/S Hood</div>
+          <div class="product-price">$36.50</div>
+        </a>
+      </li>
+      <li class="product-card">
+        <a href="#" aria-label="Ladies Sonoma Hybrid Knit Jacket">
+          <div class="product-image">
+            <img src="data/images/10-23174A.jpg" alt="Ladies Sonoma Hybrid Knit Jacket" loading="lazy">
+          </div>
+          <div class="product-title">Ladies Sonoma Hybrid Knit Jacket</div>
+          <div class="product-price">$84.85</div>
+        </a>
+      </li>
+      <li class="product-card">
+        <a href="#" aria-label="Ladies Yerba Knit Quarter Zip">
+          <div class="product-image">
+            <img src="data/images/10-23176A.jpg" alt="Ladies Yerba Knit Quarter Zip" loading="lazy">
+          </div>
+          <div class="product-title">Ladies Yerba Knit Quarter Zip</div>
+          <div class="product-price">$64.20</div>
+        </a>
+      </li>
+    </ul>
+  </main>
+
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const siteHeader = document.querySelector(".site-header");
+    let lastScrollY = window.scrollY;
+
+    document.querySelectorAll(".mobile-nav a").forEach((link) => {
+      link.addEventListener("click", () => {
+        menuToggle.checked = false;
+      });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") menuToggle.checked = false;
+    });
+
+    window.addEventListener("scroll", () => {
+      const currentScrollY = window.scrollY;
+
+      if (menuToggle.checked || currentScrollY <= 0) {
+        siteHeader.classList.remove("is-hidden");
+      } else if (currentScrollY > lastScrollY) {
+        siteHeader.classList.add("is-hidden");
+      } else {
+        siteHeader.classList.remove("is-hidden");
+      }
+
+      lastScrollY = currentScrollY;
+    }, { passive: true });
+  </script>
+</body>
+</html>
