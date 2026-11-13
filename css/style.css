@@ -66,7 +66,6 @@ input {
   right: 0;
   left: 0;
   background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
   transition: transform 220ms ease;
 }
 
@@ -114,7 +113,25 @@ input {
 }
 
 .cart-link {
+  position: relative;
   margin-left: auto;
+}
+
+.cart-count {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  display: grid;
+  min-width: 20px;
+  height: 20px;
+  place-items: center;
+  padding: 0 5px;
+  border-radius: 50%;
+  background: #20365a;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
 }
 
 .cart-link svg,

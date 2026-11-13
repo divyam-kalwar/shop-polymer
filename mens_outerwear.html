@@ -19,6 +19,7 @@
       <a class="logo" href="index.html" aria-label="SHOP home">SHOP</a>
       <a class="cart-link" href="cart.html" aria-label="Shopping cart">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM1 2v2h2l3.6 7.59-1.35 2.45A2 2 0 0 0 7 17h12v-2H7.42a.25.25 0 0 1-.25-.25l.03-.12.9-1.63h7.45a2 2 0 0 0 1.75-1.03l3.58-6.49A1 1 0 0 0 20 4H5.21l-.94-2H1Z"/></svg>
+        <span class="cart-count" aria-hidden="true">2</span>
       </a>
     </div>
     <nav class="category-nav" aria-label="Shop categories">
@@ -44,7 +45,7 @@
     </header>
     <ul class="product-grid">
       <li class="product-card">
-        <a href="#" aria-label="Men's Tech Shell Full-Zip">
+        <a href="mens_outerwear_item.html" aria-label="Men's Tech Shell Full-Zip">
           <div class="product-image">
             <img src="data/images/10-15068B.jpg" alt="Men's Tech Shell Full-Zip" loading="lazy">
           </div>
@@ -190,33 +191,6 @@
     </ul>
   </main>
 
-  <script>
-    const menuToggle = document.getElementById("menu-toggle");
-    const siteHeader = document.querySelector(".site-header");
-    let lastScrollY = window.scrollY;
-
-    document.querySelectorAll(".mobile-nav a").forEach((link) => {
-      link.addEventListener("click", () => {
-        menuToggle.checked = false;
-      });
-    });
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") menuToggle.checked = false;
-    });
-
-    window.addEventListener("scroll", () => {
-      const currentScrollY = window.scrollY;
-
-      if (menuToggle.checked || currentScrollY <= 0) {
-        siteHeader.classList.remove("is-hidden");
-      } else if (currentScrollY > lastScrollY) {
-        siteHeader.classList.add("is-hidden");
-      } else {
-        siteHeader.classList.remove("is-hidden");
-      }
-
-      lastScrollY = currentScrollY;
-    }, { passive: true });
-  </script>
+  <script src="./js/nav-scroll.js" defer></script>
 </body>
 </html>
