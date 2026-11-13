@@ -70,10 +70,6 @@ body {
   transition: transform 220ms ease;
 }
 
-.site-header.is-hidden {
-  transform: translateY(-100%);
-}
-
 .site-header:has(.menu-toggle:checked) {
   transform: none;
 }

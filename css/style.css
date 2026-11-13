@@ -69,10 +69,6 @@ input {
   transition: transform 220ms ease;
 }
 
-.site-header.is-hidden {
-  transform: translateY(-100%);
-}
-
 .site-header:has(.menu-toggle:checked) {
   background: transparent;
   box-shadow: none;

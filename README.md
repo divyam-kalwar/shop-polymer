@@ -1,6 +1,6 @@
 # Shop Polymer
 
-A lightweight, responsive storefront prototype built with HTML, CSS, and a small JavaScript enhancement for hiding and showing the header as the page scrolls.
+A lightweight, responsive storefront prototype built with HTML and CSS. It is intentionally JavaScript-free.
 
 ## Overview
 
@@ -30,8 +30,6 @@ shop-polymer/
 │   ├── style.css             # Home page styles
 │   ├── mens_outerwear.css    # Shared navigation and product listing styles
 │   └── commerce.css          # Product detail, cart, checkout, and confirmation styles
-├── js/
-│   └── nav-scroll.js         # Hides the header on downward scroll; reveals it on upward scroll
 ├── images/                  # Storefront and category product images
 ├── LICENSE                  # MIT license
 └── README.md                # Project documentation
@@ -45,7 +43,6 @@ This repository is a responsive storefront demo with a home page, four category 
 
 - responsive static storefront layout
 - category navigation and CSS-only mobile drawer
-- header hides when scrolling down and reappears when scrolling up
 - branded storefront design with product imagery
 - responsive layouts for mobile, tablet, and desktop
 - one hard-coded detail page linked from each category listing
@@ -57,11 +54,9 @@ This repository is a responsive storefront demo with a home page, four category 
 
 - HTML5
 - CSS3
-- Vanilla JavaScript for scroll-based header visibility
 - Static asset-based mock storefront
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 
