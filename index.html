@@ -100,11 +100,11 @@
     window.addEventListener("scroll", () => {
       const currentScrollY = window.scrollY;
 
-      if (menuToggle.checked || currentScrollY === 0) {
+      if (menuToggle.checked || currentScrollY <= 0) {
         siteHeader.classList.remove("is-hidden");
-      } else if (currentScrollY < lastScrollY) {
-        siteHeader.classList.add("is-hidden");
       } else if (currentScrollY > lastScrollY) {
+        siteHeader.classList.add("is-hidden");
+      } else {
         siteHeader.classList.remove("is-hidden");
       }
 

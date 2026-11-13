@@ -1,57 +1,54 @@
 # Shop Polymer
 
-A lightweight storefront prototype built as a static HTML/CSS/JavaScript project. The repository contains a basic e-commerce front-end shell with a landing page, product browsing views, and placeholder screens for cart and checkout flows.
+A lightweight storefront prototype built with static HTML, CSS, and a small amount of JavaScript. The project is a front-end mockup for a retail catalog and landing page, designed to look like a modern online shop without requiring any package installation or build tooling.
 
 ## Overview
 
-This project provides a simple foundation for an online shopping experience with a clean storefront layout. It is intentionally dependency-free and can run directly in a browser without a build step.
+This repository currently includes:
 
-The current implementation includes:
+- a home page with category-based storefront sections
+- a product listing page for men's outerwear
+- responsive navigation and mobile menu behavior
+- storefront branding and product imagery
+- static product catalog content rendered directly in HTML
 
-- A branded home page with category navigation
-- Product listing and product detail page placeholders
-- Shopping cart and checkout page scaffolds
-- Shared styling and image assets for a storefront theme
+The project is intentionally dependency-free and can be opened directly in a browser.
 
 ## Project structure
 
 ```text
 shop-polymer/
-├── home.html             # Store home page
-├── item-listing.html     # Product listing page
-├── single-item.html      # Single product details page
-├── cart.html             # Shopping cart page
-├── checkout.html         # Checkout page
+├── index.html                # Store home page
+├── mens_outerwear.html       # Product listing page for men's outerwear
 ├── css/
-│   └── style.css        # Shared storefront styles
+│   ├── style.css            # Styles for the home page
+│   └── mens_outerwear.css   # Styles for the product listing page
 ├── js/
-│   └── script.js        # Front-end logic
-├── images/              # Product and branding assets
-├── data/                # Placeholder data folder
-├── LICENSE              # MIT license
-├── README.md            # Project documentation
+│   └── script.js            # Placeholder JavaScript file (currently empty)
+├── images/                  # Storefront and category product images
+├── LICENSE                  # MIT license
+├── README.md                # Project documentation
+└── .git/                    # Git metadata
 ```
 
 ## Current implementation status
 
-This repository is in an early scaffold stage. The homepage is present and structured, while the remaining storefront pages are still starting points for future development. The project is suitable as a base for a larger catalog, cart, and checkout experience.
+This repository is in an early storefront prototype stage. The home page and one catalog page are implemented, while the broader e-commerce flow (cart, checkout, product detail pages, and dynamic data) is not yet built out.
 
 ## Features
 
-- Responsive static storefront layout
-- Category-based navigation structure
-- Product image support and storefront branding
-- Browser-friendly preview without package installation
-- Easy extension for catalog data and shopping cart logic
+- responsive static storefront layout
+- category navigation and mobile drawer menu
+- branded storefront design with product imagery
+- product listing cards with title and pricing
+- no build step or external dependencies required
 
 ## Technologies
 
 - HTML5
 - CSS3
 - Vanilla JavaScript
-- Static asset-based storefront design
-
-
+- Static asset-based mock storefront
 
 ## License
 
@@ -59,10 +56,12 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Notes
 
-This is a front-end storefront foundation rather than a complete e-commerce application. To turn it into a fully functional shop, you would typically add:
+This is not a complete e-commerce application. It is a static storefront demo intended to serve as a visual foundation for future catalog, cart, and checkout features.
 
-- product catalog data and filtering
-- dynamic cart state with JavaScript or a framework
-- checkout form validation
-- real inventory and pricing logic
-- backend integration and payment handling
+Potential next steps include:
+
+- creating additional product category and detail pages
+- implementing a real shopping cart with state management
+- adding checkout form validation
+- replacing static HTML data with JSON or backend-driven catalog content
+- adding product filtering and search
