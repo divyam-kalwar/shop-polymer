@@ -1,0 +1,457 @@
+
+/* =========================================
+   1. CSS RESET
+========================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 76px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  padding-top: 64px;
+  padding-bottom: 64px;
+  font-family: Roboto, "Noto", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #202020;
+  background: #fff;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+/* =========================================
+   2. BASE LAYOUT - MOBILE
+========================================= */
+
+.shop-home {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   3. HEADER
+========================================= */
+
+.site-header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  transition: transform 220ms ease;
+}
+
+.site-header.is-hidden {
+  transform: translateY(-100%);
+}
+
+.site-header:has(.menu-toggle:checked) {
+  transform: translateY(0);
+  background: transparent;
+  box-shadow: none;
+}
+
+/* =========================================
+   4. TOOLBAR
+========================================= */
+
+.toolbar {
+  position: relative;
+  display: flex;
+  height: 64px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  transition: transform 220ms ease;
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  color: #202020;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  transform: translateX(-50%);
+}
+
+.cart-link,
+.menu-button {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  color: #202020;
+}
+
+.cart-link {
+  margin-left: auto;
+}
+
+.cart-link svg,
+.menu-button svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+/* =========================================
+   5. MOBILE NAVIGATION
+========================================= */
+
+.menu-toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.menu-button {
+  display: flex;
+  cursor: pointer;
+}
+
+.menu-toggle:focus-visible + .toolbar .menu-button {
+  outline: 2px solid #263a5b;
+  outline-offset: 2px;
+}
+
+/* Hide desktop navigation */
+
+.category-nav {
+  display: none;
+}
+
+/* Mobile drawer */
+
+.mobile-nav {
+  position: fixed;
+  z-index: 12;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: min(256px, 80vw);
+  padding: 8px 0;
+  overflow-y: auto;
+  background: #fff;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.12);
+  transform: translateX(-100%);
+  transition: transform 220ms ease;
+}
+
+.mobile-nav a {
+  display: block;
+  padding: 10px 20px;
+  color: #757575;
+  font-size: 13px;
+}
+
+.mobile-nav a:hover {
+  background: #f5f5f5;
+}
+
+/* Drawer overlay */
+
+.drawer-backdrop {
+  position: fixed;
+  z-index: 9;
+  inset: 0;
+  display: block;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease;
+}
+
+/* Open drawer */
+
+.site-header:has(.menu-toggle:checked) .mobile-nav {
+  transform: translateX(0);
+}
+
+.site-header:has(.menu-toggle:checked) .drawer-backdrop {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Shift page when drawer opens */
+
+.site-header:has(.menu-toggle:checked) .toolbar,
+body:has(.menu-toggle:checked) .shop-home,
+body:has(.menu-toggle:checked) .site-footer {
+  transform: translateX(min(256px, 80vw));
+}
+
+.shop-home,
+.site-footer {
+  transition: transform 220ms ease;
+}
+
+body:has(.menu-toggle:checked) {
+  overflow: hidden;
+}
+
+/* =========================================
+   6. CATEGORY SECTIONS
+========================================= */
+
+.category {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.category-image {
+  position: relative;
+  display: block;
+  height: 240px;
+  overflow: hidden;
+}
+
+.category-image img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: auto;
+  max-width: none;
+  height: 100%;
+  transform: translateX(-50%);
+  object-fit: cover;
+}
+
+.category h1,
+.category h2 {
+  margin: 24px 0;
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+/* =========================================
+   7. CATEGORY ROW
+========================================= */
+
+.category-row {
+  display: flex;
+  width: 100%;
+}
+
+.category-compact {
+  width: 50%;
+}
+
+.category-compact .category-image {
+  height: 160px;
+}
+
+.category-compact h2 {
+  min-height: 42px;
+  font-size: 1em;
+}
+
+/* =========================================
+   8. SHOP BUTTON
+========================================= */
+
+.shop-button {
+  display: inline-block;
+  margin: 0;
+  padding: 8px 12px;
+  border: 2px solid #000;
+  background: #fff;
+  color: #202020;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.shop-button:hover {
+  background: #f2f2f2;
+}
+
+.shop-button:active {
+  background: #000;
+  color: #fff;
+}
+
+/* =========================================
+   9. FOOTER
+========================================= */
+
+.site-footer {
+  margin-top: 20px;
+  text-align: center;
+  line-height: 24px;
+}
+
+.site-footer > a {
+  color: #757575;
+}
+
+.site-footer > a:hover {
+  text-decoration: underline;
+}
+
+.demo-label {
+  width: 120px;
+  margin: 8px auto 0;
+  padding: 6px;
+  background: #202020;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   10. LARGE MOBILE
+   481px and above
+========================================= */
+
+@media (min-width: 481px) {
+
+  .category-compact .category-image {
+    height: 240px;
+  }
+
+}
+
+/* =========================================
+   11. TABLET
+   768px and above
+========================================= */
+
+@media (min-width: 768px) {
+
+  html {
+    scroll-padding-top: 140px;
+  }
+
+  body {
+    padding-top: 130px;
+  }
+
+  /* Toolbar */
+
+  .toolbar {
+    height: 64px;
+  }
+
+  .menu-button {
+    display: none;
+  }
+
+  /* Desktop navigation */
+
+  .category-nav {
+    display: flex;
+    height: 66px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .category-nav a {
+    padding: 9px 5px;
+    color: #202020;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .category-nav a:hover {
+    text-decoration: underline;
+  }
+
+  /* Hide mobile navigation */
+
+  .mobile-nav,
+  .drawer-backdrop {
+    display: none;
+  }
+
+  /* Category sections */
+
+  .category-image {
+    height: 320px;
+  }
+
+  .category h1,
+  .category h2 {
+    margin: 32px 0;
+  }
+
+  .category-compact .category-image {
+    height: 320px;
+  }
+
+  .category-compact h2 {
+    font-size: 1.1em;
+  }
+
+  /* Shop buttons */
+
+  .shop-button {
+    padding: 8px 44px;
+    font-size: 14px;
+  }
+
+}
+
+/* =========================================
+   12. DESKTOP
+   1024px and above
+========================================= */
+
+@media (min-width: 1024px) {
+
+  .shop-home {
+    max-width: 1440px;
+  }
+
+}
+
+/* =========================================
+   13. REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+
+}
