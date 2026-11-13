@@ -1,18 +1,14 @@
 # Shop Polymer
 
-A lightweight, static storefront prototype built with HTML and CSS. It demonstrates a responsive retail catalog and checkout flow without JavaScript, package installation, or build tooling.
+A lightweight, responsive storefront prototype built with HTML, CSS, and a small JavaScript enhancement for hiding and showing the header as the page scrolls.
 
 ## Overview
 
-This repository currently includes:
+The storefront includes a home page, four category listings, a hard-coded product detail page for each category, a sample cart, checkout form, and order confirmation page. The pages are static demos: product/cart data is hard-coded and checkout does not submit or store form data.
 
-- a home page with category-based storefront sections
-- four category-based product listing pages
-- responsive navigation and mobile drawer
-- storefront branding and product imagery
-- static product catalog content rendered directly in HTML
+## Run locally
 
-The project is intentionally dependency-free and can be opened directly in a browser.
+Open `index.html` directly in a browser, or serve the project directory with any local static HTTP server. No package installation, build step, or external dependencies are required.
 
 ## Project structure
 
@@ -29,10 +25,13 @@ shop-polymer/
 ├── ladies_tshirts_item.html  # Hard-coded ladies' T-shirt detail page
 ├── cart.html                 # Cart page with hard-coded sample items and count
 ├── checkout.html             # Responsive demo checkout form
+├── checkout-success.html     # Confirmation page reached from Place Order
 ├── css/
-│   ├── style.css            # Styles for the home page
-│   ├── mens_outerwear.css   # Shared product listing and navigation styles
-│   └── commerce.css         # Product detail, cart, and checkout layouts
+│   ├── style.css             # Home page styles
+│   ├── mens_outerwear.css    # Shared navigation and product listing styles
+│   └── commerce.css          # Product detail, cart, checkout, and confirmation styles
+├── js/
+│   └── nav-scroll.js         # Hides the header on downward scroll; reveals it on upward scroll
 ├── images/                  # Storefront and category product images
 ├── LICENSE                  # MIT license
 └── README.md                # Project documentation
@@ -40,29 +39,29 @@ shop-polymer/
 
 ## Current implementation status
 
-This repository is a responsive, static storefront demo with a home page, four category listings, a hard-coded product detail page for the first item in each listing, a sample cart, and a checkout form layout. These pages are visual prototypes; the cart count and contents are fixed, and checkout does not submit data.
+This repository is a responsive storefront demo with a home page, four category listings, a hard-coded product detail page for one item in each category, a sample cart, a checkout form, and a checkout confirmation page. Product selection, cart contents, quantities, and the cart-count badge are static examples. The Place Order link opens the confirmation page; it does not validate or submit the checkout form.
 
 ## Features
 
 - responsive static storefront layout
 - category navigation and CSS-only mobile drawer
+- header hides when scrolling down and reappears when scrolling up
 - branded storefront design with product imagery
 - responsive layouts for mobile, tablet, and desktop
 - one hard-coded detail page linked from each category listing
 - hard-coded cart contents, totals, and cart-count badge
-- checkout form and order summary layout
+- checkout form, order summary, and demo confirmation page
 - no build step or external dependencies required
 
 ## Technologies
 
 - HTML5
 - CSS3
+- Vanilla JavaScript for scroll-based header visibility
 - Static asset-based mock storefront
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Notes
 
-This is not a production e-commerce application. It is a static storefront demo intended to serve as a visual foundation for future catalog, cart, and checkout features.
